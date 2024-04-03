@@ -4,6 +4,7 @@
 2.  Acessar o diretório via terminal
 3.  Executar o comando **yarn** ou **npm i**
 4.  Executar o comando **yarn start** ou **npm start**
+5.  Utilizar a versão 12 do Node. (12.22.12)
 
 **Rotas da aplicação**
 
