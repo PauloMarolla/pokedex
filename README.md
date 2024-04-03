@@ -57,8 +57,8 @@ Utilização do Eslint e Prettier no padrão do create react-app.
 ## Design system
 
 **Figma**
-[Design system | LooqBox Challenge](https://www.figma.com/file/aFA3EvxzYjyoI3pwDvPff8/Desafio-LooqBox?node-id=0:1)
-Rascunho do Design que desenvolvi no Figma, algumas correções foram feitas direto no código.
+[Design](https://www.figma.com/file/aFA3EvxzYjyoI3pwDvPff8/Desafio-LooqBox?node-id=0:1)
+Rascunho do Design que criei no Figma, algumas correções foram feitas direto no código.
 
 ## Bibliotecas utilizadas
 
