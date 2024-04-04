@@ -4,7 +4,6 @@
 2.  Acessar o diretório via terminal
 3.  Executar o comando **yarn** ou **npm i**
 4.  Executar o comando **yarn start** ou **npm start**
-5.  Utilizar a versão 12 do Node. (12.22.12)
 
 **Rotas da aplicação**
 
@@ -14,14 +13,12 @@
 ## Arquitetura do código
 
 Sempre que possível, não exportar o componente como default, e utilizar a desestruturação no import dos arquivos.
-Utilização do Eslint e Prettier no padrão do create react-app.
+Utilização do Eslint e Prettier no padrão do create-react-app.
 
 **/Components**
 
-- Todos os componentes gerais da aplicação, uma pasta com o nome do componente, contendo sempre 2 arquivos, index.tsx e style.module.scss.
+- Todos os componentes gerais da aplicação, uma pasta com o nome do componente, contendo sempre 2 arquivos, index.tsx e styles.ts
 - **Index.tsx** sempre contendo as funcionalidades, tipagens e HTML do componente.
-
-  **style.module.scss** sempre contendo os estilos, caso estiver utilizando StyledComponents, também manter da mesma forma, apenas renomeando a extensão do arquivo.
 
 **/Hooks**
 
@@ -35,16 +32,7 @@ Utilização do Eslint e Prettier no padrão do create react-app.
 
 **/services**
 
-- Normalemnte utilizado para sercicos externos, como a instancia Axios com a baseUrl da Api, ou então, instancias de CMS...
-
-**/styles**
-
-- Todos os arquivos de estilização ficam nesta pasta, exceto dos componentes.
-- Na raiz do diretório, criar arquivos que serão gerais para toda a aplicação.
-- Dentro do diretório pages, se encontram todos os arquivos de estilização de cada página em específico, mantendo o mesmo padrão de nome do componente dentro da pasta raiz Pages.
-- **/ts**
-- Diretório onde se encontram todas as tipagens que retornam da Api
-- Sempre seguindo o padrão do nome de arquivo, com relação aos Endpoints da Api.
+- Normalemnte utilizado para serciços externos, como a instancia Axios com a baseUrl da Api, ou então, instancias de CMS...
 
 **Routes**
 
