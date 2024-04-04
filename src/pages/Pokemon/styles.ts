@@ -1,4 +1,8 @@
-.link {
+import styled from "styled-components";
+import { Link } from 'react-router-dom'
+
+
+export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   color: var(--dark-gray-500);
@@ -18,9 +22,9 @@
       fill: var(--blue);
     }
   }
-}
+`
 
-.content {
+export const Content = styled.div` 
   min-height: calc(100vh - 82px);
   height: 100%;
   display: grid;
@@ -41,50 +45,50 @@
     color: var(--dark-gray-500);
     font-weight: 500;
     padding-bottom: 6rem;
+    text-transform: capitalize;
     
     @media(max-width: 832px) {
       text-align: center;
     }
   }
-}
+`
 
-.informations {
+export const Informations = styled.section`
   grid-area: informations;
 
   @media(max-width: 832px) {
     margin: 0 auto;
-    
   }
 
   .containerCardInformation {
     display: flex;
     gap: 3rem;
 
-    @media(max-width: 832px) {
-      justify-content: center;
-    }
-  }
-
-  h4 {
-    font-size: 3.2rem;
-    font-weight: 500;
-    color: var(--dark-gray-500);
-    padding-bottom: 2rem;
-
-    @media(max-width: 832px) {
-      text-align: center;
+      @media(max-width: 832px) {
+        justify-content: center;
+      }
     }
 
-    &::before {
-      content: '';
-      display: block; 
-      width: 100%;
-      max-width: 45rem;
-      height: 2px;
-      background: var(--light-gray-600);
-      margin: 5rem 0;
+    h4 {
+      font-size: 3.2rem;
+      font-weight: 500;
+      color: var(--dark-gray-500);
+      padding-bottom: 2rem;
+
+      @media(max-width: 832px) {
+        text-align: center;
+      }
+
+      &::before {
+        content: '';
+        display: block; 
+        width: 100%;
+        max-width: 45rem;
+        height: 2px;
+        background: var(--light-gray-600);
+        margin: 5rem 0;
+      }
     }
-  }
 
   .abilities {
     display: flex;
@@ -102,14 +106,13 @@
       font-weight: 500;
       padding: 2rem 3.5rem;
       border-radius: 1rem;
+      text-transform: capitalize;
     }
   }
-}
+`
 
-
-
-.imageAndType {
-  grid-area: imageAndType;
+export const ImageAndType = styled.section`
+   grid-area: imageAndType;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,7 +155,8 @@
       align-items: center;
       font-size: 1.8rem;
       font-weight: 500;
-      color: var(--dark-gray-500);     
+      color: var(--dark-gray-500);
+      text-transform: capitalize;
 
       img {
         display: block;
@@ -175,4 +179,5 @@
       }
     }
   }
-}
+`
+

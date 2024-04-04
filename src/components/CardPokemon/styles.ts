@@ -1,4 +1,8 @@
-.container {
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+export const Container = styled(Link)`
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -45,5 +49,7 @@
     font-size: 2.4rem;
     font-weight: 500;
     padding-top: 4rem;
+    text-transform: capitalize;
   }
-}
+
+`

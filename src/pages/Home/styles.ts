@@ -1,11 +1,13 @@
-.pokemonLogo {
+import styled from "styled-components";
+
+export const PokemonLogo = styled.img`
   display: block;
   width: 100%;
   max-width: 42rem;
   margin: 6rem auto;
-}
+`
 
-.containerForm {
+export const ContainerForm = styled.form`
   display: flex;
   justify-content: center;
 
@@ -54,9 +56,9 @@
       }
     }
   }
-}
+`
 
-.pokemonList {
+export const PokemonList = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6rem 2rem;
@@ -73,4 +75,4 @@
   @media(max-width: 480px) {
     grid-template-columns: 1fr;
   }
-}
+`

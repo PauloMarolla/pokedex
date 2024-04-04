@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { MdSearch } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
-import { usePokemon } from '../hooks/usePokemon';
-import { Loading } from '../components/Loading/index';
-import { CardPokemon } from '../components/CardPokemon/index';
+import { usePokemon } from '../../hooks/usePokemon';
+import { Loading } from '../../components/Loading/index';
+import { CardPokemon } from '../../components/CardPokemon/index';
 
-import styles from '../styles/pages/home.module.scss';
-import globalStyles from '../styles/global.module.scss';
+import { FullHeight, GlobalContainer } from '../../styles/global';
+import { ContainerForm, PokemonList, PokemonLogo } from './styles';
 
 export function Home() {
   const [name, setName] = useState('');
@@ -39,15 +39,14 @@ export function Home() {
   if (isLoading) return <Loading />;
 
   return (
-    <div className={globalStyles.min100vh}>
-      <main className={globalStyles.container}>
-        <img
-          className={styles.pokemonLogo}
+    <FullHeight>
+      <GlobalContainer>
+        <PokemonLogo
           src="/images/pokemon/logo.svg"
           alt="Logo of Pokemon"
         />
-        <form onSubmit={handleSearchPokemon} className={styles.containerForm}>
-          <div className={styles.containerInputSearch}>
+        <ContainerForm onSubmit={handleSearchPokemon}>
+          <div className='containerInputSearch'>
             <input
               type="text"
               id="search"
@@ -60,14 +59,14 @@ export function Home() {
               <MdSearch />
             </button>
           </div>
-        </form>
+        </ContainerForm>
 
-        <ul className={styles.pokemonList}>
+        <PokemonList>
           {pokemons?.results.map(({ name, url }) => {
             return <CardPokemon key={name} url={url} name={name} />;
           })}
-        </ul>
-      </main>
-    </div>
+        </PokemonList>
+      </GlobalContainer>
+    </FullHeight>
   );
 }

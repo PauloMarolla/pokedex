@@ -1,10 +1,10 @@
-import styles from './style.module.scss';
-import globalStyles from '../../styles/global.module.scss';
+import { FullHeight } from '../../styles/global';
+import { Container } from './styles';
 
 export function Loading() {
   return (
-    <div className={globalStyles.min100vh}>
-      <div className={styles.container}>
+    <FullHeight>
+      <Container>
         <img
           src="/images/pokemon/outline_pokeball.svg"
           alt="outline pokeball"
@@ -25,7 +25,7 @@ export function Loading() {
           src="/images/pokemon/outline_pokeball.svg"
           alt="outline pokeball"
         />
-      </div>
-    </div>
+      </Container>
+    </FullHeight>
   );
 }

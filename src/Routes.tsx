@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { PokemonProvider } from './hooks/usePokemon';
-import { Home } from './pages/Home';
-import { Pokemon } from './pages/Pokemon';
+import { Home, Pokemon } from './pages';
 
 export function AppRoutes() {
   return (

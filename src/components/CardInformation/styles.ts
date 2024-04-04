@@ -1,4 +1,7 @@
-.container {
+import styled from "styled-components";
+
+export const Container = styled.article`
+
   background: var(--light-gray-500);
   width: 100%;
   max-width: 16rem;
@@ -31,5 +34,7 @@
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
   }
-}
 
+
+
+`

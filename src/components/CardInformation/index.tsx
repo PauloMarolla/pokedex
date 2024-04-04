@@ -1,4 +1,4 @@
-import styles from './style.module.scss';
+import { Container } from './styles';
 
 interface CardInformationProps {
   value?: number;
@@ -7,9 +7,9 @@ interface CardInformationProps {
 
 export function CardInformation({ label, value }: CardInformationProps) {
   return (
-    <article className={styles.container}>
+    <Container>
       <strong>{value}</strong>
       <span>{label}</span>
-    </article>
+    </Container>
   );
 }

@@ -1,7 +1,4 @@
-import { Link } from 'react-router-dom';
-
-import globalStyles from '../../styles/global.module.scss';
-import styles from './style.module.scss';
+import { Container } from './styles';
 
 interface CardPokemonProps {
   name: string;
@@ -15,20 +12,20 @@ export function CardPokemon({ name, url }: CardPokemonProps) {
 
   return (
     <li>
-      <Link className={styles.container} to={`/pokemon/${id}`}>
+      <Container to={`/pokemon/${id}`}>
         <img
-          className={styles.pokeball}
+        className='pokeball'
           src="/images/pokemon/pokeball.svg"
           alt="pokeball"
         />
         <img
-          className={styles.pokemon}
+        className='pokemon'
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
           alt={`Pokemon ${name}`}
         />
 
-        <span className={globalStyles.capitalize}>{name}</span>
-      </Link>
+        <span>{name}</span>
+      </Container>
     </li>
   );
 }

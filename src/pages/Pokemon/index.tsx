@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { MdArrowBack } from 'react-icons/md';
 
-import { usePokemon } from '../hooks/usePokemon';
-import { Loading } from '../components/Loading/index';
-import { CardInformation } from '../components/CardInformation/index';
+import { usePokemon } from '../../hooks/usePokemon';
+import { Loading } from '../../components/Loading/index';
+import { CardInformation } from '../../components/CardInformation/index';
 
-import globalStyles from '../styles/global.module.scss';
-import styles from '../styles/pages/pokemon.module.scss';
+import { FullHeight, GlobalContainer } from '../../styles/global';
+import { Content, ImageAndType, Informations, StyledLink } from './styles';
 
 export function Pokemon() {
   const { isLoading, showPokemon, selectedPokemon } = usePokemon();
@@ -23,35 +23,35 @@ export function Pokemon() {
   if (isLoading) return <Loading />;
 
   return (
-    <div className={globalStyles.min100vh}>
-      <main className={globalStyles.container}>
-        <Link className={styles.link} to="/">
+    <FullHeight>
+      <GlobalContainer>
+        <StyledLink to="/">
           <MdArrowBack />
           Return
-        </Link>
+        </StyledLink>
 
-        <div className={styles.content}>
-          <h1 className={globalStyles.capitalize}>{selectedPokemon?.name}</h1>
-          <section className={styles.informations}>
-            <div className={styles.containerCardInformation}>
+        <Content>
+          <h1>{selectedPokemon?.name}</h1>
+          <Informations>
+            <div className='containerCardInformation'>
               <CardInformation label="Height" value={selectedPokemon?.height} />
               <CardInformation label="Weight" value={selectedPokemon?.weight} />
             </div>
 
             <h4>Abilities</h4>
 
-            <ul className={styles.abilities}>
+            <ul className='abilities'>
               {selectedPokemon?.abilities.map(({ ability }) => {
                 return (
-                  <li className={globalStyles.capitalize} key={ability.name}>
+                  <li key={ability.name}>
                     {ability.name.replace('-', ' ')}
                   </li>
                 );
               })}
             </ul>
-          </section>
+          </Informations>
 
-          <section className={styles.imageAndType}>
+          <ImageAndType>
             <img
               src={
                 selectedPokemon?.sprites.other['official-artwork']
@@ -61,10 +61,10 @@ export function Pokemon() {
               alt={`Pokemon ${selectedPokemon?.name}`}
             />
 
-            <ul className={styles.types}>
+            <ul className='types'>
               {selectedPokemon?.types.map(({ type }) => {
                 return (
-                  <li className={globalStyles.capitalize} key={type.name}>
+                  <li key={type.name}>
                     <img
                       src={`/images/pokemon/types/${type.name}.png`}
                       alt={type.name}
@@ -74,9 +74,9 @@ export function Pokemon() {
                 );
               })}
             </ul>
-          </section>
-        </div>
-      </main>
-    </div>
+          </ImageAndType>
+        </Content>
+      </GlobalContainer>
+    </FullHeight>
   );
 }
